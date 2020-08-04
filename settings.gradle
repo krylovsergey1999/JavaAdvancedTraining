@@ -1,0 +1,7 @@
+/*
+ * Настройки проекта и из каких модулей он состоит.
+ */
+
+rootProject.name = 'JavaAdvancedTraining'
+include 'L-01-gradle'
+

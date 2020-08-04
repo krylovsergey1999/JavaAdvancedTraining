@@ -1,0 +1,28 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Для build толстого Jar
+    id 'com.github.johnrengelman.shadow'
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava'
+}
+
+// Описание task, для подробностей можно смотреть доку
+shadowJar {
+    archiveBaseName.set('gradleHelloWorld')
+    archiveVersion.set('1.0.0')
+    archiveClassifier.set('') // Какой то дополнительный атрибут к файлу
+    manifest {
+        attributes 'Main-Class': 'ru.advancedtraining.MainApp'
+    }
+}
+
+// Чтобы во время build автоматически создался shadowJar, надо прописать зависимость от build задачи
+tasks.build.dependsOn tasks.shadowJar
