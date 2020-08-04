@@ -39,6 +39,3 @@ generated_tests
 
 grpc
 generated
-
-gradlew
-gradlew.*
