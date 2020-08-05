@@ -40,6 +40,15 @@ allprojects {
             dependency("com.google.guava:guava:${Versions.guava}")
         }
     }
+
+    configurations.all {
+        resolutionStrategy {
+            failOnVersionConflict()
+        }
+
+        resolutionStrategy {
+        }
+    }
 }
 
 // Print versions from BOM
@@ -53,6 +62,6 @@ task managedVersions {
 
 // Gradle -q hello
 task hello {
-    println 'Hello world!'
+    println 'Hello Task!'
     println System.getenv('JAVA_HOME')
 }
