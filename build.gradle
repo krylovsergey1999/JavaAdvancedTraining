@@ -50,6 +50,7 @@ allprojects {
             // Jackson
             dependency("com.fasterxml.jackson.core:jackson-databind:${Versions.jackson_databind}")
             dependency("org.glassfish:javax.json:${Versions.glassfishJson}")
+            dependency("com.google.protobuf:protobuf-java-util:${Versions.protobuf}")
         }
     }
 
