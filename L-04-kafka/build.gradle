@@ -1,0 +1,39 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Для build толстого Jar
+    id 'com.github.johnrengelman.shadow'
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava'
+
+    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+    implementation 'org.apache.kafka:kafka-clients'
+
+    // Logging
+    implementation 'org.apache.logging.log4j:log4j-api'
+    implementation 'org.apache.logging.log4j:log4j-core'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl'
+
+    // Jackson
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+}
+
+// Описание task, для подробностей можно смотреть доку
+shadowJar {
+    archiveBaseName.set('kafka')
+    archiveVersion.set('1.0.0')
+    archiveClassifier.set('') // Какой то дополнительный атрибут к файлу
+    manifest {
+        attributes 'Main-Class': 'ru.advancedtraining.ProducerDemo'
+    }
+}
+
+// Чтобы во время build автоматически создался shadowJar, надо прописать зависимость от build задачи
+tasks.build.dependsOn tasks.shadowJar

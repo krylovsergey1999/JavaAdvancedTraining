@@ -6,4 +6,6 @@ rootProject.name = 'JavaAdvancedTraining'
 include 'L-01-gradle'
 include 'L-02-gradle'
 include 'L-03-patterns'
+include 'L-04-kafka'
+include 'L-05-io'
 

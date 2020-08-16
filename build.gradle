@@ -38,6 +38,18 @@ allprojects {
                 mavenBom("org.springframework.boot:spring-boot-dependencies:2.3.1.RELEASE")
             }
             dependency("com.google.guava:guava:${Versions.guava}")
+
+            // Kafka
+            dependency("org.apache.kafka:kafka-clients:${Versions.kafka}")
+
+            // Logging
+            dependency("org.apache.logging.log4j:log4j-api:${Versions.log4j}")
+            dependency("org.apache.logging.log4j:log4j-core:${Versions.log4j}")
+            dependency("org.apache.logging.log4j:log4j-slf4j-impl:${Versions.log4j}")
+
+            // Jackson
+            dependency("com.fasterxml.jackson.core:jackson-databind:${Versions.jackson_databind}")
+            dependency("org.glassfish:javax.json:${Versions.glassfishJson}")
         }
     }
 
@@ -47,6 +59,13 @@ allprojects {
         }
 
         resolutionStrategy {
+            force("javax.servlet:servlet-api:2.4")
+            force("commons-logging:commons-logging:1.1.1")
+            force("commons-lang:commons-lang:2.5")
+            force("org.codehaus.jackson:jackson-core-asl:1.8.8")
+            force("org.codehaus.jackson:jackson-mapper-asl:1.8.3")
+            force("org.codehaus.jettison:jettison:1.1")
+            force("org.javassist:javassist:3.24.0-GA")
         }
     }
 }

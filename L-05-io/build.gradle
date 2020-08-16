@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id "com.google.protobuf" version "0.8.12"
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    implementation 'com.google.guava:guava'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'javax.json:javax.json-api'
+    implementation 'org.glassfish:javax.json'
+}
+
+def filesBaseDir = "${project.projectDir}/src"
+def protoSrcDir = "${project.projectDir}/src/main/proto"
+
+sourceSets {
+    main {
+        proto {
+            srcDir protoSrcDir
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.12.1'
+    }
+    generatedFilesBaseDir = filesBaseDir
+    generateProtoTasks {
+        ofSourceSet('main')
+    }
+}
+
+test {
+}
