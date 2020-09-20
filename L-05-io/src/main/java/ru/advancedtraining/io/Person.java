@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Implements Serializable - обязательное условие для сериализации.
  */
 public class Person implements Serializable {
-    private static final long serialVersionUID = 216125185905603871L; // нельзя забывать про serialVersionUID
+    private static final long serialVersionUID = 206125185905603871L; // нельзя забывать про serialVersionUID
 
     private final int age;
     private final String name;

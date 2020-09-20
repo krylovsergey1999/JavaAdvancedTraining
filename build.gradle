@@ -82,6 +82,6 @@ task managedVersions {
 
 // Gradle -q hello
 task hello {
-    println 'Hello Task!'
+    println 'Initial project'
     println System.getenv('JAVA_HOME')
 }
