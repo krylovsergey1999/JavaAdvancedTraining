@@ -9,4 +9,5 @@ include 'L-03-patterns'
 include 'L-04-kafka'
 include 'L-05-io'
 include 'L-06-nio'
+include 'L-07-thread'
 
