@@ -37,18 +37,7 @@ public class ProducerDemoWithCallback {
 		LOGGER.info("Create a producer record");
 
 		// send data - asynchronous
-		producer.send(record, new Callback() {
-			@Override
-			public void onCompletion(RecordMetadata metadata, Exception exception) {
-				// executes every time a record is successfully send or an exception is thrown
-				if (exception != null) {
-					// the record is successfully send
-					metadata.
-				} else {
 
-				}
-			}
-		});
 		LOGGER.info("Send data");
 
 		// flush data

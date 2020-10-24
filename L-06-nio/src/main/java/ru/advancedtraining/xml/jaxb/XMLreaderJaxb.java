@@ -7,12 +7,6 @@ import java.io.File;
 
 
 
-/* for java 9,10
-https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception-in-j
---add-modules java.xml.bind
-
-removed from java 11
-*/
 public class XMLreaderJaxb {
     public static void main(String[] args) throws JAXBException {
         ClassLoader classLoader = ru.advancedtraining.xml.sax.XMLreader.class.getClassLoader();
